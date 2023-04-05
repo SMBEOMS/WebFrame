@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 연습 페이지</title>
+    <link rel="stylesheet" type="text/css" href="./Common.css"> <!-- css 파일을 만들고 style 적용하기 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=East+Sea+Dokdo&display=swap" rel="stylesheet">
+    <style>
+        div {
+            color:brown; 
+        }
+        li{
+            background-color: darkblue;
+        }
+        #f3 { 
+            background-color: blueviolet;
+        }
+        .second{
+            background-color: teal;
+            font-size:20px;
+        }
+        div ul {
+            border:3px dotted red;
+        }
+        li:hover{
+            background-color: black;
+
+        }
+        a{
+            color:white;
+            text-decoration:none;
+        }
+        a:active{
+            color:yellow;
+        }
+        a:visited{
+            color: black;
+        }
+        input{
+            color: blue;
+            background-color: yellow;
+        }
+        input:focus{
+            font-size:25px;
+            background-color: pink;
+        }
+        .dok{
+            font-family: 'East Sea Dokdo', cursive;           
+        }
+        .dot{
+            font-family: 'Black And White Picture', sans-serif;
+        }
+        #box{
+            color: yellow;
+            background-color: plum;
+            border: 3px dashed red;  
+            height: 150px;        
+            
+            margin: 10px 30px 50px 100px; /* top right bottom left*/
+            text-align:left;
+            padding: 10px 30px 50px 100px;
+        }
+
+        #box2{
+            color: yellow;
+            background-color: plum;
+            border: 3px dashed red;          
+            
+            margin: 10px 30px 50px 100px; /* top right bottom left*/
+            text-align:left;
+            padding: 10px 30px 50px 100px;
+
+            border-radius : 10px 30px 50px 100px /*왼쪽위 오른쪽위 오른쪽아래 왼쪽아래 순*/;
+
+        }
+        #img{
+            border: 15px outset skyblue;
+            width: 300px;
+        }
+        #back{
+            width:50%;
+            height:350px;
+            border:2px solid green;
+            background-color:gray;
+            background-image: url(./image/santo.jpg);
+            background-size: 100px 100px;
+            background-repeat:repeat-y;
+            background-position:center center;
+            
+        }
+        #text{
+            color: black;
+            font-weight:bolder;
+            text-shadow: 3px 3px 3px rgb(229, 31, 31);
+            border: 1px solid black;
+            box-shadow: 2px 3px 1px;
+        }
+        span:hover{
+            cursor:progress;
+        }   
+    </style> <!-- #f3 은 ID가 F3에만 적용하게 만드게하는거//  Class만 따로 적용하려면 .클래스명 // ul 부분에 테두리가 생김 // "," " " ">" 차이 알기--> 
+</head>
+
+<body style="margin:0px;">
+
+    <span id = "text">정 범 석</span>
+
+    <hr>
+    <section id="back">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam, vero tenetur? Autem, fuga! Animi ut cumque, nam iure earum in incidunt amet quas tempora inventore asperiores fuga dolor a quaerat!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui alias delectus nihil deleniti repellendus temporibus molestiae vel perferendis sapiente! Laudantium aut dolore nostrum possimus excepturi deleniti fugit quam earum beatae!
+    </section>
+
+    <section id="img">
+        <img src="./image/santo.jpg" width="300">
+    </section>
+
+
+    <div style="background-color: blue;">test</div>
+    
+    <div id="box">박스 모델 적용</div>
+
+    <span id="box2">인라인 박스 모델</span>
+
+    <div style="background-color: blue;">test</div>
+    <br><br><br><br><br><br><br>
+
+
+    <form>
+        <input type="text" placeholder="name"><br>
+        <input type="password" placeholder="pass"><br>
+        <input type="button" value="누르세요.">
+    </form>
+    <h1>스타일을 위한 연습 페이지</h1>
+    <p>첫 번째 paragraph
+        <div class="second">자기 소개의 내용을 입력해 봅시다.</div> <!-- Class .second를 적용 했음 > .second 백그라운드컬러,폰트사이즈적용-->
+        <hr>
+        <div class="dok">제 이름은 <span>정범석 입니다. </span></div>
+        <div style="color: darkmagenta;background-color: aqua; font-style:oblique;">제가 자주가는 사이트는 다음과 같아요.</div>
+        <a href = "http://www.google.com">Go Google</a><br>
+    </p>
+    <hr>
+    <h1>Test Title</h1>
+    <div>
+        <ul>
+            <li id="f1">First Item 1</li>
+            <li id="f2">First Item 2</li>
+            <li id="f3">First Item 3</li>
+            <li id="f4">First Item 4</li>
+            <li id="f5">First Item 5</li>
+        </ul>
+        
+    </div>
+    <hr>
+    <ul>
+        <li id="s1" class="second">Second Item 1</li>
+        <li id="s2" class="second">Second Item 2</li>
+        <li id="s3" class="second">Second Item 3</li>
+        <li id="s4" class="second">Second Item 4</li>
+        <li id="s5" class="second">Second Item 5</li>
+    </ul>
+    <hr>
+    
+
+</body>
+</html>
