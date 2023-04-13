@@ -6,24 +6,271 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>고급 스타일 연습</title>
     <style>
-        section{
+        /* section{
             border: 1px solid red;
         }
         div{
             background-color: aqua;
             margin:10px;
             display:inline-block; /*인라인으로 하면 나머지 적용안됌*/
-            position: absolute; /* relative = 상대 배치 (기준이됌) top:10 > 10만큼 내려라
-                                            left: 10 > 10만큼 오른쪽으로 가라*/
+            /* position: absolute; /* relative = 상대 배치 (기준이됌) top:10 > 10만큼 내려라 */
+                                            /* left: 10 > 10만큼 오른쪽으로 가라*/
                                 /* absolute = 절대 배치*/
-        }
+        /* }
         span{
             border: 2px dotted yellow;
             display:inline-block;
+        }  */
+        section{
+            border: 1px solid red;
+            margin: 10px 0px ;
+        }
+        div{
+            border: 1px dotted blue;
+            background-color: aqua;
+            font-size: 15px;
+            margin: 5px;
+            width: 100px; height: 50px;
+        }
+        #sec1 div{
+            display: inline-block;
+            position: relative;
+        }
+        #sec1 .dv1{ /*relative = 상대 배치(그쪽선으로 기준)*/
+            left: 10px;
+            top: 10px;
+        }
+        #sec1 .dv2:hover{ /*hover = 마우스가 올라가면 바뀌는것*/
+            background-color: orange;
+            left:5px; top: 5px;
+
+        }
+        #sec2 div {
+            display: inline-block;
+        }
+
+        #sec2 {
+            position: relative; /*부모 설정해야함*/
+        }
+        #sec2 .dv1{
+            position: absolute;/*절대 배치 자기를 제외*/
+            left:20px; top: 5px;
+            
+        }
+        #sec2 .dv3{
+            position: fixed; /*고정 배치*/
+            right: 5px;
+            bottom: 5px;
+            visibility: visible; /*hidden*/
+        }
+        #sec2 .dv4{
+            float: right;
+        }
+        #adv{
+            float: left;
+        }
+        .adv{
+            border: 1px solid black;
+            width:80px; height:50px;
+            float:left;
+            margin: 5px;
+            overflow:scroll;
+            /*visibility:hidden;*/
+            display: none;
+        }
+    </style>
+    <style> /* nav style */
+        *{margin:0px; padding: 0px;}
+        nav{
+            background-color: aquamarine;
+            padding: 10px;
+        }
+        nav li{
+            background-color: orange;
+            list-style-position: outside;
+            list-style-type: circle;
+            display: inline;
+            color: white;
+        }
+        nav li:hover{
+            background-color: blue;
+            color: black;
+            
+        }
+        a{
+            color:white;
+            text-decoration:none; /*밑줄 삭제하기*/
+        }
+        a:hover{
+            color: red;
+        }
+    </style>
+    <style>
+        #sec5{
+            height: 100px;
+            position: relative;
+            text-align: center;
+        }
+        #sec5 div{
+            position:absolute; /*1,2,3,4,5 가 겹쳐보임*/
+        }
+        #sec5 .dv2{
+            left:10px;
+            top:5px;
+            z-index: 10; /*z축으로 10*/
+        }
+        #sec5 .dv3{
+            left:20px;
+            top:10px;
+        }
+        #sec5 .dv4{
+            left:30px;
+            top:15px;
+        }
+        #sec5 .dv5{
+            left:40px;
+            top:20px;
+        }
+        #sec5 div:hover{
+            z-index: 100;
+        }
+    </style>
+    <style>
+        table, tr, td, th{
+            border-collapse: collapse;
+        }
+        th, td{
+            width:70px;
+        }
+        thead,tfoot{
+            background-color: aqua;
+        }
+        th{
+            text-align:left;
+        }
+        tr{
+            border-bottom:2px dotted red;
+        }
+        tbody tr:nth-child(even){ /*nth-child= 몇번째 자식 even = 짝수*/
+            background-color: yellowgreen;
+        }
+        tbody tr:nth-child(odd){
+            background-color: lightgray;
+        }
+        tbody tr:hover{
+            background-color: orange
         }
     </style>
 </head>
 <body>
+    <h2>table styling</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>NAME</th>
+            <th>HTML</th>
+            <th>CSS</th>
+            <th>JAVASCRIPT</th>
+        </tr>
+        </thead>
+        <tfoot>
+        <tr>
+            <th>합계</th>
+            <th>220</th>
+            <th>154</th>
+            <th>240</th>
+        </tr>
+        </tfoot>
+        <tbody>
+        <tr>
+            <td>정범석</td>
+            <td>12</td>
+            <td>34</td>
+            <td>56</td>
+        </tr>
+        
+        <tr>
+            <td>정민석</td>
+            <td>78</td>
+            <td>91</td>
+            <td>23</td>
+        </tr>
+        <tr>
+            <td>KAIN</td>
+            <td>45</td>
+            <td>67</td>
+            <td>89</td>
+        </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
+    <section id="sec5">
+        <div class="dv1">1</div>
+        <div class="dv2">2</div>
+        <div class="dv3">3</div>
+        <div class="dv4">4</div>
+        <div class="dv5">5</div>
+    </section>
+
+
+    <nav>
+        <ul>
+            <li>HOME</li>
+            <li><a href="http://search.naver.com/serach.naver?query=americano">Americano</a></li>
+            <li>Cafe Latte</li>
+            <li>Cappuchino</li>
+        </ul>
+    </nav>
+
+    
+    
+    
+    
+    <hr/>
+
+    <article>
+        <p class = "adv">광고 ipsum, dolor sit amet consectetur adipisicing elit. Tempore error earum nemo consectetur eligendi minima iure, architecto deserunt aspernatur facilis similique voluptate suscipit natus veritatis velit quaerat voluptas. Id, repellendus?</p>
+        <p>본문 ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur optio cumque sint nisi, placeat magni sit commodi illo impedit quos dolorum ea vero delectus pariatur facilis provident iste obcaecati! Quis!</p>
+
+    </article>
+    <article id="artivle">
+        <div id="adv" style="display:inline;">
+            나 광고야!
+        </div>
+        <div style="display: inline;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum soluta distinctio, velit dolorem amet impedit? Consectetur dolor, aut tempora dolores non illo quaerat suscipit a, sequi, nemo debitis beatae!
+        </div>
+        
+    </article>
+
+    <section id="sec1">
+        <div class="dv1">content1</div>
+        <div class="dv2">content2</div>
+        <div class="dv3">content3</div>
+        <div class="dv4">content4</div>
+    </section>
+    <section id="sec2">
+        <div class="dv1">content1</div>
+        <div class="dv2">content2</div>
+        <div class="dv3">content3</div>
+        <div class="dv4">content4</div>
+    </section>
+    <section id="sec3">
+        <div class="dv1">content1</div>
+        <div class="dv2">content2</div>
+        <div class="dv3">content3</div>
+        <div class="dv4">content4</div>
+    </section>
+
+    <hr>
+
+
     <section>
         <div style="padding:5px; top: 10px;" ><span>첫 번째 인라인</span>
             추가 <span> 첫 번째의 추가 인라인</span>입니다.
