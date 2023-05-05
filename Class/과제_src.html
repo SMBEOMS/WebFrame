@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        body{margin:0px; padding:0px;}        
+        section {
+            position:absolute;
+            left:50px;
+            top:50px;
+            border: 2px solid blue;
+            width: 800px;
+            height:350px;
+        }
+        section div{
+            position: absolute;
+            left: 10px;
+            top: 165px;
+            color: red;
+        }
+        section img{
+            position: absolute;
+            right: 10px;
+            border:1px red solid;
+        }
+        @keyframes goto{
+            0%{
+                position: absolute;
+                left: 10px;
+                top: 165px;
+            }
+            50%{
+                position: absolute;
+                left: 300px;
+                top: 100px;
+            }
+            to{
+                position: absolute;
+                left: 635px;
+                top: 165px;
+                z-index: 7;
+            }
+        }
+        div{
+            animation-name: goto;
+            animation-duration: 3s;
+        }
+         
+    </style>
+</head>
+<body>
+    <section>
+        <div><strong>〓〓〓▶</strong></div>
+        <img id="target" src="https://search.pstatic.net/common/?src=http%3A%2F%2Fcafefiles.naver.net%2FMjAxNzA4MDNfMjkw%2FMDAxNTAxNzcwODYxOTAz.o5E9efkH4wjWRawiGF4QuaUmmLZ2gRrWYTrVQDSRc2Ig.mVURlHMFqU8RumHTk3c4q7nuC9ieCqh_mEyUC7FW5NEg.JPEG.kbj9915%2Ftarget001.jpg&type=sc960_832"
+            width=200>
+    </section>    
+</body>
+</html>

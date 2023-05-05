@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2023 2분반 1번</title>   
+
+    <style>
+        body {font-style: italic ;
+              font-size: 20px;
+            /* <body> 내 모든 글자에 구글 "Hi Melody" 폰트 적용하고 폰트 크기는 20px로 정의하시오. */
+            
+
+        }
+    </style>
+    <style>
+        @keyframes Ani{
+            0% {background-color: red;}
+            50% {background-color: yellow;}
+            to {background-color: purple;}
+        }
+        div:hover{
+            animation-name: Ani;
+            animation-duration: 1s;
+            box-shadow: none;
+            position: relative;
+            left: 3px;
+            
+        }
+        section.sec2{
+            background: lightgray;
+            width: 270px;
+            height: 100px;
+            border-style: 2px;
+            border-color: black;
+            border-style: dashed;
+            padding: 10px 20px;
+        }
+        div.dv1 div.dv2{
+            margin: 0px;
+            padding: 0px 30px;
+            height: 30px;
+            width: 30px;
+            border-style: 1px;
+            text-align: center;
+        }
+        span{
+            color: red;
+            background: lightgray;
+
+        }
+        input{
+            border-width: 2px;
+            color: grey;
+            font-style: solid;
+        }
+        input[type=text]:focus, input[type=email]:focus, input[type=password]:focus{
+            background: pink;
+            font-size: 15px;
+            color: blue;
+            font-style: solid;
+            border-width: 2px;
+        }    
+        label{
+            display: block;
+            padding: 5px;
+        }
+        #first{
+            display: inline-block;
+            border-style: solid;
+        }
+        fieldset label{
+            display: inline;
+        }
+        /* 처음에 배경색이 red, 중간에 yellow, 마지막에 purple인 애니메이션을 정의하세요. */
+        
+
+        
+        /* 문제에 맞도록 form 내부에 적용되는 스타일을 작성하세요. */
+
+        
+
+        /* 문제에 맞도록 건반 연주 내용에 적용되는 스타일을 작성하세요. */
+
+        
+    </style>
+</head>
+<body>
+    <form>
+        <section class="sec1" >
+            <h2>회원정보 입력</h2>
+                  <label>
+                <span>이름:   </span><input type="text" placeholder="입력을 입력하세요">  
+                  </label>
+                <label>
+                    <span>비밀번호:   </span>  <input type="password" placeholder="4자리 이상">
+                </label>
+                <label>
+                    <span>e-mail:   </span>  <input type="email" placeholder="id@domain">
+                </label>
+            <fieldset>
+                <legend>성별</legend>
+                <label id="first">
+                    <input type = "radio" name="성별" value="1" checked>남성                
+                    <input type = "radio" name="성별" value="2">여성<br>
+                </label>
+             </fieldset>
+            <br>
+            <fieldset>
+                <legend>관심분야</legend>
+                <label id="first">
+                    IT<input type="checkbox" value="1" checked>
+                    인공지능<input type="checkbox" value="2">
+                    외모<input type="checkbox" value="3">
+                    운동<input type="checkbox" value="4">
+                </label>
+            </fieldset>
+            <br>
+            <label id="first">
+                <p>메뉴 고르기</p>
+                <input type = "radio" name="메뉴" value="1">짜장면                
+                <input type = "radio" name="메뉴" value="2" checked>짬뽕
+                <input type = "radio" name="메뉴" value="3">볶음밥                
+                <input type = "radio" name="메뉴" value="4">잡채밥
+            </label>
+
+        <form> <!-- form 내부를 완성하세요. -->
+            
+
+        </form>
+    </section>
+    <hr>
+    <h2>건반 연주</h2>
+    <!-- 이하 변경 금지!!!  -->
+
+    <section class="sec2">        
+        <div class="dv1">도</div>
+        <div class="dv2">레</div>
+        <div class="dv3">미</div>
+        <div class="dv4">파</div>
+        <div class="dv5">솔</div>
+        <div class="dv6">라</div>
+        <div class="dv7">시</div>
+    </section>
+    <hr>    
+</body>
+</html>

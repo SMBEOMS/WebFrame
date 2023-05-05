@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <img src="https://loremflickr.com//320/240"
+        onmouseover = "this.src = 'https://loremflickr.com//320/240/dog'"
+        onmouseout = "this.src = 'https://loremflickr.com//320/240/paris'"
+    >
+    <script>
+        //let a = 100;
+        //b = ~a +1;
+        //alert(b);
+        // 5 -> 00000101
+        //1의 보수: -5 -> 11111111 11111111 11111111 11111010 1의보수안씀
+        //2의 보수: -5 -> 11111111 11111111 11111111 11111011 1의보수에 1을더함
+        // > 5+ (-5) -> 1 00000000 00000000 00000000 00000000
+
+        let score = Number(prompt("정범석의 점수를 입력하세요"));
+        let grade;
+        score =  Math.floor(score/10);
+        switch(score){
+            case 9:
+            case 10:
+            grade = "A";
+            break;
+            
+            case 8:
+            case 7:
+            case 6:
+            case 5:
+            grade = "B";
+            break;
+
+            case 4:
+            case 3:
+            case 2:
+            grade = "C";
+            break;
+
+            case 0:
+            case 1:
+            grade = "F";
+            break;
+
+        }
+        document.write("당신의 점수 " +score+ "는 평점 F입니다.");
+            
+    </script>
+    
+</body>
+</html>
