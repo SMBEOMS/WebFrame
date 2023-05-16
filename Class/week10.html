@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Test</title>
+    <script src="./myfunction.js"></script> <!--js파일을 따로만들고 연결하기-->
+    <script>
+        function test(a,b){ //3, newFc
+            a = b ()        //a = newFC()
+            return a;
+        };
+        let newFc = function(name){
+             return "hello"
+        };
+    </script><!--일반 변수로 사용가능-->
+</head>
+<body>
+    <h2>함수 연습하기</h2>
+    <script>
+        // let ansl
+        // ans = add(4,5);
+        // document.write("abser = " + ans +"\n");
+        // document.write("<br>");
+        
+
+        // let a;
+        // a = add(4.5, 5.6);
+        // document.write("a = "+ a + "\n"); // 10.1 그대로 보임
+        // document.write("<br>");
+
+
+        // let b;
+        // b = lastNum(3, 1000);
+        // document.write("3의 배수의 합이 1000을 넘겼을 때 마지막 더해진 숫자는 " + b + "입니다");
+        // console.log("함수 호출이 끝났음");
+        // document.write("<br>");
+
+
+
+        // document.write(test(3, newFc));
+        // document.write("<br>");
+        // document.write(eval("3 + 4 * 5"));  //수식을 넣으면 알아서 계산해주는 함수
+
+    </script>
+
+
+
+
+    <script>
+//           window.onload = function(){
+//         //모든 요소를 다 display 한 후 동작하는 위치
+//         let now = new Date();
+//         if(now.getSeconds() % 2 == 0){//짝수
+//             document.body.style.backgroundColor = "violet";
+//         }
+//         else{
+//             document.body.style.backgroundColor = "lightskyblue";
+//         }
+// }
+//         let str = new String("HELLO");
+//         let str2 = "HELLO";
+//         str2 += "world";
+
+
+
+
+        // window.onload = function(){//모든 요소를 다 display 한 후 동작하는 위치
+        //                             //onload = html 에있는것들 이 다실행됐을때 그다음에 시작
+        //     let today = new Date();
+        //     document.write(today);
+        //     document.write(today.getFullYear());
+
+
+
+            
+        //     document.write("<hr>시계 : ");
+        //     let watch = "";
+        //     watch += today.getHours() + " : " + today.getMinutes() + " : " + today.getSeconds();
+        //     document.write(watch);
+        //     document.write("<hr");
+            
+        //     //setInterVal(function, milliseconds)
+        //     //function wtach(){} 
+        //     let watchFc = function(){
+        //         let today = new Date();
+        //         let watch = "현재시간" + today.getHours() + " : " + today.getMinutes() + " : " + today.getSeconds();
+        //         document.write(watch);
+        //         document.body.innerHTML = watch;
+        //     };
+        //     setInterval(watchFc ,1000);
+        // }
+
+        let arr = new Array(4);
+        // let arr2 = [1,2,3,4]
+        function sayHi(){
+            return "hello javascript";
+        };
+
+        arr[0] = 1;
+        arr[1] = "hello";
+        arr[2] = sayHi;
+        arr[4] = 99;
+        // for(i=0; i<5; i++){
+        //     document.write(arr[0] + "<br>")
+        // }
+        document.write(sayHi());
+        document.write("<br>");
+        document.write(arr[2]());
+
+        //Math <- static class
+        let score = new Array(30);
+        for(i=0; i < 30; i++){
+            score[i] = Math.random()
+        }
+        score.push(120);
+        score.push(130);
+        score.push(140);
+
+        score.push(140);
+        score.push(140);
+        score.push(140);
+
+
+        for(i=0; i < score.length ;i++){
+            document.write(score[i] + ", ");
+        }
+        
+        
+        //사용자 객체 (1회용)
+        let temp = new Object();
+        temp.name = "JEONG";
+        temp.age = "26";
+
+        // 1.사용자 객체 생성자 버전
+        // function Student(k, e, m) {
+        //     this.kor = k;
+        //     this.eng = e;
+        //     this.m = m;
+        //     // this.average = function(){
+        //     //     return(this.kor + this.eng + this.m)/3;
+        //     // }
+        // //}
+
+
+
+
+        // 2.class 버전
+        class Student{
+            constructor(k, e, m){
+                this.kor = k;
+                this.eng = e;
+                this.m = m;
+            }
+            
+        }
+        Student.prototype.average =function () {
+            return (this.kor + this.eng + this.m) / 3;
+        };
+        // toString override
+        Student.prototype.toString = function(){
+            str = "hi student";
+            str += "K: " + this.kor + " E: " + this.eng +"<br>";
+            srt +="AVG: " + this.average() + "<br>";
+            return str;
+        }
+        let temSt = new Student(70, 74, 98);
+        document.write("<hr>");
+        document.write("K: " + temSt.kor + " E: " + temSt.eng + " S: " + temSt.m);
+        document.write("<br> 평균: " + temSt.average());
+
+        document.write("<br>" +temSt ); // 결과는 object object 없음 // 객체가들어가면 tostring 함수가 자동적호출된다
+
+
+    </script>
+</body>
+</html>
