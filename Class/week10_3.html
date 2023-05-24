@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            border: 2px solid blue;
+        }
+        th, tr, td{
+            border: 2px solid blue;
+        }
+    </style>
+    <script>
+        class Student {
+            constructor(i, k, e, m) {
+                this.id = i;
+                this.kor = k;
+                this.eng = e;
+                this.m = m;
+            }
+        }
+
+        Student.prototype.average = function () {
+            return (this.kor + this.eng + this.m) / 3;
+        };
+
+        Student.prototype.toString = function () {
+            let str = "ID: " + this.id;
+            str += " K: " + this.kor + " E: " + this.eng + "<br>";
+            str += "AVG: " + this.average() + "<br>";
+            return str;
+        };
+
+
+        let class2 = new Array();
+        for (i = 0; i < 30; i++) {
+            let k = Math.ceil(Math.random() * 30 + 70);
+            let e = Math.ceil(Math.random() * 30 + 70);
+            let m = Math.ceil(Math.random() * 30 + 70);
+            let tSt = new Student(i + 1, k, e, m);
+            class2.push(tSt);
+        }
+
+        // 화면 로딩이 다 끝난 이후에 시작되는 시점
+        window.onload = function(){
+            let t = document.getElementById("test");
+            let tbodyContent = "";
+            for (let i = 0; i < class2.length; i++) {
+                tbodyContent += "<tr>";
+                tbodyContent += "<td>" + class2[i].id + "</td>";
+                tbodyContent += "<td>" + class2[i].kor + "</td>";
+                tbodyContent += "<td>" + class2[i].eng + "</td>";
+                tbodyContent += "<td>" + class2[i].average() + "</td>";
+                tbodyContent += "</tr>";
+            }
+            t.innerHTML = tbodyContent;
+
+            let title = document.getElementById("title");
+            title.innerHTML += "(version 2.0)";
+            title.style.color = "skyblue";  
+        }
+    </script>
+</head>
+<body>
+    
+    <h1 id="title">성적표 출력</h1>
+
+    <table>
+        <thead>
+            <tr><th>ID</th><th>KOR</th><th>ENG</th><th>AVG</th></tr>
+        </thead>
+        <tbody id="test">
+
+        </tbody>
+        <tfoot>
+
+        </tfoot>
+    </table>
+</body>
+</html>

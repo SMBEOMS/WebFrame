@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Test</title>
+</head>
+<body>
+    <h2>함수 연습하기</h2>
+    <script>
+        let arr = new Array(4);
+        function sayHi() {
+            return "hello javascript";
+        }
+
+        arr[0] = 1;
+        arr[1] = "hello";
+        arr[2] = sayHi;
+        arr[4] = 99;
+
+        document.write(sayHi());
+        document.write("<br>");
+        document.write(arr[2]());
+
+        let score = new Array(30);
+        for (i = 0; i < 30; i++) {
+            score[i] = Math.random();
+        }
+        score.push(120);
+        score.push(130);
+        score.push(140);
+        score.push(140);
+        score.push(140);
+        score.push(140);
+
+        for (i = 0; i < score.length; i++) {
+            document.write(score[i] + ", ");
+        }
+
+        let temp = new Object();
+        temp.name = "JEONG";
+        temp.age = "26";
+
+        class Student {
+            constructor(i, k, e, m) {
+                this.id = i;
+                this.kor = k;
+                this.eng = e;
+                this.m = m;
+            }
+        }
+
+        Student.prototype.average = function () {
+            return (this.kor + this.eng + this.m) / 3;
+        };
+
+        Student.prototype.toString = function () {
+            let str = "ID: " + this.id;
+            str += " K: " + this.kor + " E: " + this.eng + "<br>";
+            str += "AVG: " + this.average() + "<br>";
+            return str;
+        };
+
+        let temSt = new Student(10, 70, 74, 98);
+        document.write("<hr>");
+        document.write("K: " + temSt.kor + " E: " + temSt.eng + " S: " + temSt.m);
+        document.write("<br>평균: " + temSt.average());
+        document.write("<br>" + temSt);
+
+        let class2 = new Array();
+        for (i = 0; i < 30; i++) {
+            let k = Math.ceil(Math.random() * 30 + 70);
+            let e = Math.ceil(Math.random() * 30 + 70);
+            let m = Math.ceil(Math.random() * 30 + 70);
+            let tSt = new Student(i + 1, k, e, m);
+            class2.push(tSt);
+        }
+
+        document.write("<hr>");
+        document.write(class2[5]);
+        document.write("<hr>");
+
+        // for (i = 0; i < class2.length; i++) {
+        //     document.write(class2[i]);
+        //     document.write("<hr>");
+        // }
+
+        for(k in class2){
+            document.write(class2[k] + "<br>");
+        }
+    </script>
+    <hr>
+</body>
+</html>

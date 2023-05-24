@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cl { 
+            background-color: purple; 
+        }
+    </style>
+    <script>
+        window.onload = function (){
+            // document.body.style.backgroundColor = "yellow";
+            // let com = document.getElementById("title");
+            // com.style.border = "2px dotted green";
+            // com.setAttribute("class", "cl"); //클래스를 추가
+            // let com2 = document.getElementsByClassName("tt");
+            // for(i in com2)
+            //     com2[i].style.border = "3px solid red"; //com2에는 몇개가 있줄몰라서 array변수로 저장되어서 [0],~숫자를써야함
+            // let image = document.getElementById("myimg");
+            // image.src = "images/desert.jpg";
+            // image.title = "그냥 사막"
+            // image.setAttribute("width", "500px");
+
+            let com3 = document.getElementsByTagName("hr");
+            for(i in com3){
+                com3[i].style.height = "15px";
+            }
+        }
+    </script>
+    <script>
+        //function changeImage(){}
+        let changeImage = function(obj){
+            let image = document.getElementById("myimg");
+            image.src = "images/desert.jpg";
+            image.title = "그냥 사막"
+            image.setAttribute("width", "500px");
+            
+            obj.setAttribute("value", "이미지가 교체되었음.");
+        }
+        let changeBorder = function(obj){
+            obj.style.border = "15px ridge brown";
+        }
+        let delBorder = function(obj){
+            obj.style.border = "0px";
+        }
+    </script>
+</head>
+<body>
+    <h1 id="title" class="tt">Document 객체 변화시키기</h1>
+    <hr>
+    <img id="myimg" src="images/Koala.jpg" width="300" title="멋있는 사막"
+        onmouseover="changeBorder(this)"
+        onmouseout="delBorder(this)"><br>
+    <input type="button" value="이미지 교체" onclick="changeImage(this)">
+    <hr>
+    <!-- <h1 id="title">하단 테이블</h1> <getElementById s가아니라고 한개만 할수있음 위에 Document 객체 변화시키기에서 이미 사용함
+                                    여러개를 사용하고싶으면 class를 사용하면됌 -->
+    <h1 class="tt">하단 타이틀</h1>
+</body>
+</html>

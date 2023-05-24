@@ -148,7 +148,8 @@
 
         // 2.class 버전
         class Student{
-            constructor(k, e, m){
+            constructor(i, k, e, m){
+                this.id = i;
                 this.kor = k;
                 this.eng = e;
                 this.m = m;
@@ -160,18 +161,38 @@
         };
         // toString override
         Student.prototype.toString = function(){
-            str = "hi student";
-            str += "K: " + this.kor + " E: " + this.eng +"<br>";
+            str = "ID : " + this.id;
+            str += " K: " + this.kor + " E: " + this.eng +"<br>";
             srt +="AVG: " + this.average() + "<br>";
             return str;
         }
-        let temSt = new Student(70, 74, 98);
+        let temSt = new Student(10, 70, 74, 98);
         document.write("<hr>");
         document.write("K: " + temSt.kor + " E: " + temSt.eng + " S: " + temSt.m);
         document.write("<br> 평균: " + temSt.average());
 
         document.write("<br>" +temSt ); // 결과는 object object 없음 // 객체가들어가면 tostring 함수가 자동적호출된다
 
+        let class2 = new Array();  // 전체 학생 저장 *DB*
+        for(i =0; i < 30; i++){
+            let k = Math.ceil(random() * 30 + 70);
+            let e = Math.ceil(random() * 30 + 70);
+            let m = Math.ceil(random() * 30 + 70);//랜덤함수는 0~1까지만듬 // * 30 하면 0~30 // +70 = 최소 70
+            let tSt = new Student(i+1,k,e,m);
+            class2.push(tSt);
+        }
+
+        document.write("<hr>");
+        document.write(class2[5]);
+        document.write("<hr>"); 
+
+        // for(i=0; i<class2.length; i++){
+        //     document.write(class2[i]);
+        //     document.write("<hr>");
+        // }
+        for(k in class2){
+            
+        }
 
     </script>
 </body>
