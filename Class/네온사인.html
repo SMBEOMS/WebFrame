@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네온사인</title>
+    <style>
+        li {
+            display: inline-block;
+            width: 100px; height: 20px;
+            border:1px solid black;
+        }
+    </style>
+    <script>
+        let runNeon = function() {
+        let ons = document.getElementsByClassName("group");
+
+        for (let i = 0; i < ons.length; i++) {
+            setInterval(function() {
+                let r = Math.random() * 256;
+                let g = Math.random() * 256;
+                let b = Math.random() * 256;
+                ons[i].style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+            });
+        }
+    }
+    </script>
+</head>
+<body>
+    <h2>네온사인 만들기</h2>
+    <button id="run" onclick="runNeon()">동작하기</button>
+    <div id="neon">
+        <li class="group"></li>
+        <li class="group"></li>
+        <li class="group"></li>
+        <li class="group"></li>
+        <li class="group"></li>
+    </div>
+</body>
+</html>

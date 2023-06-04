@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Event Test</title>
+    <script>
+        function change(obj, e){
+            document.body.style.backgroundColor="pink";
+            
+            obj.style.border = "2px dotted blue"
+            console.log(e);
+        }
+        function info(e){
+            alert(e.offsetX); // screenX, clientX, offsetX
+        }
+        function mover(){
+            this.style.backgroundColor ="yellow";
+        }
+        function mout(){
+            this.style.backgroundColor ="white";
+
+        }
+        function add(){
+            this.style.fontSize = "200%";
+            this.style.border = "2px dotted red";
+        }
+    </script>
+    <script>
+        window.onload = function(){
+            
+
+
+
+            /*
+            //새로운 윈도우 띄워서 공지사항 안내하기
+            let newWin = window.open("", "notice", "width=200, height=300");
+            newWin.document.open();
+            newWin.document.write("<h3>6월 21일 기말고사 있어요.</h3>");
+            //document.write("<h1>test</h1>");
+            newWin.document.close();*/
+
+
+            let lis = document.getElementsByTagName("li");
+            for(i=0; i < lis.length; i ++){
+            lis[i].onmouseover=mover; // 함수대입(등록), 함수호출X
+            lis[i].onmouseout=mout; //Ex) [4] = 10;
+        }
+
+
+        //덮어쓰기 방식
+
+        // lis[4].onmouseover = add; // [4] = 20; 이벤트를 덮어씀.
+        // lis[3].onmouseout = function(){ //덮어씀
+        //     this.style.color = "purple";
+        // }
+
+        //추가 방식
+        lis[3].addEventListener("mouseout", function(){
+            this.style.color='purple';
+        });        
+        lis[4].addEventListener = ("mouseover", add);
+        
+
+        let newImg = document.createElement("img"); // <img>
+        let newDiv = document.createElement("div"); // <div></div>
+        newImg.src = "./images/koala.jpg";
+        newImg.setAttribute("width", "200px"); // <img src='images/koala.jpg' width='200px'>
+        newDiv.innerHTML = "Added Div Tag";
+
+        let par = document.getElementById("wrapC");
+        par.appendChild(newImg);
+        par.appendChild(newDiv);
+
+        newDiv.onclick=function(){
+            par.removeChild(newImg);
+        }
+    }
+    function check(){
+        let ret = confirm("정말로 이동하시겠습니까?");
+        return let;
+    }
+    function cancel(e){
+        alert("이 항목은 선택이 불가능 합니다.");
+        console.leg(e);
+        e.preventDefault();
+    }
+    </script>
+    <style>
+        li {
+            display: inline-block;
+            width: 100px; height: 20px;
+            border:1px solid black;
+        }
+    </style>
+    <script>
+        let runNeon = function() {
+        let ons = document.getElementsByClassName("group");
+
+        for (let i = 0; i < ons.length; i++) {
+            setInterval(function() {
+                let r = Math.random() * 256;
+                let g = Math.random() * 256;
+                let b = Math.random() * 256;
+                ons[i].style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+            });
+        }
+    }
+    </script>
+</head>
+<body>
+    <h2>네온사인 만들기</h2>
+    <button id="run" onclick="runNeon()">동작하기</button>
+    <div id="neon">
+        <li class="group"></li>
+        <li class="group"></li>
+        <li class="group"></li>
+        <li class="group"></li>
+        <li class="group"></li>
+    </div>
+
+    <br>
+    <h2>링크 이동 확인하기</h2>
+    <a href="http://www.naver.com" onclick="return check()">네이버 가기</a>
+
+    <form>
+        <input type="checkbox">선택 가능<br>
+        <input type="checkbox" onclick="cancel(event)">선택 불가<br>
+    </form>
+
+    <hr>
+    <h2>새로운 컨텐츠 추가하기</h2>
+    <div id="wrapC"></div>
+
+
+    <div id="wrap2">
+        <li id="1-1" onmouseover="mover()" onmouseout="mout()">list 1</li>
+        <li id="1-2">list 2</li>
+        <li id="1-3">list 3</li>
+        <li id="1-4">list 4</li>
+        <li id="1-5">list 5</li>
+    </div>
+    <hr>
+
+    
+    <div id="wrap">
+        <span id="text" onclick="this.style.color='red'">텍스트 영역</span>
+        <br>
+        <span id="text2" onmouseover="change(this, event)">두번째 텍스트</span>
+        <br>
+        <span id="text3" onclick="info(event)">세번째 텍스트</span>
+    </div>
+</body>
+</html>
