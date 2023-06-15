@@ -13,16 +13,19 @@
         }
     </style>
     <script>
+  
         let runNeon = function() {
         let ons = document.getElementsByClassName("group");
-
+        
         for (let i = 0; i < ons.length; i++) {
             setInterval(function() {
-                let r = Math.random() * 256;
-                let g = Math.random() * 256;
-                let b = Math.random() * 256;
+                let r = Math.floor(Math.random()) * 255;
+                let g = Math.floor(Math.random()) * 255;
+                let b = Math.floor(Math.random()) * 255;
                 ons[i].style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
             });
+            // timer = setInterval(function(){}, millisec), setTimeout(function, msec)
+            // stop timer clear(timer)
         }
     }
     </script>

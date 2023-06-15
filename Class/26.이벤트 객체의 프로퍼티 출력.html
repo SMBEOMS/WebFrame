@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>이벤트 객체 프로퍼티</title>
+</head>
+
+<body>
+<h3>이벤트 객체의 프로퍼티 출력</h3>
+<hr>
+<p id="p">버튼을 클릭하면 이벤트 객체를 출력합니다.</p>
+<button onclick="f(event)">클릭하세요</button>
+
+<script>
+function f(e) { // e는 현재 발생한 이벤트 객체
+	let text = "type: " + e.type + "<br>"  //종류: 프로퍼티 현재 발생한 이벤트의 종류를 나타내는 문자열(click, load등)
+					+ "target: " + e.target + "<br>" //종류: 프로퍼티 이벤트를 발생시킨 객체
+					+ "currentTarget: " + e.currentTarget + "<br>"// 종류: 프로퍼티 현재 이벤트 리스너를 실행하고 있는 DOM 객체
+					+ "defaultPrevented: " + e.defaultPrevented; //종류:메소드 , 이벤트의 디폴트 행동을 취소시키는 메소드
+
+	let p = document.getElementById("p");
+	p.innerHTML = text; // 이벤트 객체의 프로퍼티 출력
+}
+</script>
+
+</body>
+</html>

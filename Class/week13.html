@@ -101,9 +101,9 @@
 
         for (let i = 0; i < ons.length; i++) {
             setInterval(function() {
-                let r = Math.random() * 256;
-                let g = Math.random() * 256;
-                let b = Math.random() * 256;
+                let r = Math.random() * 255;
+                let g = Math.random() * 255;
+                let b = Math.random() * 255;
                 ons[i].style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
             });
         }
