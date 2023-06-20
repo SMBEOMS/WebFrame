@@ -1,3 +1,35 @@
+<!-- 
+String
+	문자열을 담기 위한 객체
+	// 2 경우 모두 오른쪽 String 객체 생성
+
+	let hello = new String(“Hello”);
+	let hello = “Hello”;
+
+	String  객체는 일단 생성되면 수정 불가능
+
+	let hello = new String(“Hello”);
+	let res = hello.concat(“Javascript”);
+	// concat() 후 hello의 문자열 변화 없음 -->
+<!-- 
+String 객체의 특징
+	문자열 길이
+
+	String 객체의 length 프로퍼티 : 읽기 전용
+		let hello = new String(“Hello”);
+		let every = “Boy and Girl”; 
+		let m = hello.length; 					// m은 5
+		let n = every.length; 					// n은 12
+		
+		let n = "Thank you".length; 	// n은 9
+
+	문자열을 배열처럼 사용
+
+	[] 연산자를 사용하여 각 문자 접근
+		let hello = new String("Hello");
+		let c = hello[0]; 	// c = "H". 문자 H가 아니라 문자열 “H” 
+-->
+
 <!DOCTYPE html>
 <html><head><meta charset="utf-8">
 <title>String 객체의 메소드 활용</title></head>

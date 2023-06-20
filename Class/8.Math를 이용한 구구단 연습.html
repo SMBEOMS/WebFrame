@@ -1,3 +1,24 @@
+<!-- 
+Math
+	수학 계산을 위한 프로퍼티와 메소드 제공
+	new Math()로 객체 생성하지 않고 사용
+	
+	let sq = Math.sqrt(4); 			// 4의 제곱근을 구하면 2
+	let area = Math.PI*2*2; 		// 반지름이 2인 원의 면적
+
+
+	난수 발생
+		Math.random() : 0~1보다 작은 랜덤한 실수 리턴
+		Math.floor(m)은 m의 소수점 이하를 제거한 정수 리턴
+		// 0~99까지 랜덤한 정수를 10개 만드는 코드
+		for(let i=0; i<10; i++) {
+			let m = Math.random()*100; 	// m은 0~99.999... 보다 작은 실수 난수
+			let n = Math.floor(m); 				// m에서 소수점 이하를 제거한 정수(0~99사이)
+			document.write(n + " ");
+		}
+ -->
+
+
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8">
